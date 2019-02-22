@@ -1,0 +1,75 @@
+{% extends "@app/base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm">
+            <img src="{{ asset('build/images/shop1.jpg') }}" class="d-block w-100" alt="Image of inside shop">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <h4>What we do</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <h4>Opening hours</h4>
+                    <ul class="list-unstyled opening-hours">
+                        <li>Monday <span class="float-right">9:30-12:00, 12:30-16:00</span></li>
+                        <li>Tuesday <span class="float-right">9:30-12:00, 12:30-16:00</span></li>
+                        <li>Wednesday <span class="float-right">Closed</span></li>
+                        <li>Thursday <span class="float-right">9:30-12:00, 12:30-16:00</span></li>
+                        <li>Friday <span class="float-right">9:30-12:00, 12:30-16:00</span></li>
+                        <li>Saturday <span class="float-right">10:00-13:00</span></li>
+                        <li>Sunday <span class="float-right">Closed</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <h4>How to find us</h4>
+                    <div id="map"></div>
+                    <div class="address mt-3">
+                        <p><strong>Address:</strong> 67 Causewayhead, Penzance TR18 2SR</p>
+                        <p><a target="_blank" href="https://www.google.co.uk/maps/dir//CR+Carpets,+67+Causewayhead,+Penzance+TR18+2SR">Get directions</a> (via Google Maps)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <h4>Contact us</h4>
+                    <p>Call or email us, or send us a message using the form below, and we'll get back to you as soon as possible.</p>
+                    <p><strong>Tel:</strong> (01736) 874500
+                        <br><strong>Email:</strong> <a href="mailto:sales@crcarpets.com">sales@crcarpets.com</a></p>
+                    {% include '@app/homepage/_contact-form.html.twig' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+
+    <script>
+        var map = L.map('map').setView([50.119325, -5.538162], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([50.119325, -5.538162]).addTo(map)
+    </script>
+{% endblock %}

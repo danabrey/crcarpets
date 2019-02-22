@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="{{ metaDescription | default('Carpet suppliers and fitters for individuals and business, based in Penzance, Cornwall') }}">
+        <title>C.R. Carpets, Penzance, Cornwall - all times of flooring supplied and laid</title>
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <div class="header-logo">
+                        <img src="{{ asset('build/images/logo.png') }}" alt="C.R. Carpets Ltd.">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm mt-3 mb-3">
+                    <div class="tagline">Carpets and vinyl supplied and fitted</div>
+                </div>
+            </div>
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+        <footer class="pt-3">
+        </footer>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57917337-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="{{ asset('build/app.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

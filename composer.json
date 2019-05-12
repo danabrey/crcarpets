@@ -12,7 +12,8 @@
         "symfony/framework-bundle": "4.2.*",
         "symfony/twig-bundle": "4.2.*",
         "symfony/webpack-encore-bundle": "^1.1",
-        "symfony/yaml": "4.2.*"
+        "symfony/yaml": "4.2.*",
+        "symfony/web-server-bundle": "4.2.*"
     },
     "config": {
         "preferred-install": {
@@ -58,8 +59,5 @@
             "allow-contrib": false,
             "require": "4.2.*"
         }
-    },
-    "require-dev": {
-        "symfony/web-server-bundle": "4.2.*"
     }
 }

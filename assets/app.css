@@ -1,0 +1,30 @@
+body {
+    background-color: lightgray;
+}
+
+.container {
+    background-color: white;
+}
+
+.header-logo img {
+    max-width: 100%;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: #213e67;
+}
+
+h4 {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    font-weight: bold;
+    color: #213e67;
+    font-size: 1.3rem;
+    border-bottom: 1px lightgrey solid;
+}
+
+#map {
+    height: 180px;
+    width: 100%;
+}
